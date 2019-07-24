@@ -48,7 +48,11 @@ export default class VideoList extends React.Component<IProps, IState> {
                 className="align-middle"
                 onClick={() => this.props.play(video.webUrl)}
               >
-                <img src={video.thumbnailUrl} width="100px" />
+                <img
+                  alt="Video thumbnail"
+                  src={video.thumbnailUrl}
+                  width="100px"
+                />
               </td>
               <td
                 className="align-middle"
