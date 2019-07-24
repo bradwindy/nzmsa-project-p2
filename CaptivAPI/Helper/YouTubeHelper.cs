@@ -97,7 +97,7 @@ namespace Captiv.Helper
 
         public static Video GetVideoInfo(String videoId)
         {
-            String APIKey = "AIzaSyBR8fLO7PlD_nttYr7P70c3gMSLyQuGHxg";
+            String APIKey = "AIzaSyDjHAq5vz4Io8tkan7JSNAxnjLDt6MKAao";
             String YouTubeAPIURL = "https://www.googleapis.com/youtube/v3/videos?id=" + videoId + "&key=" + APIKey + "&part=snippet,contentDetails";
 
             // Use an http client to grab the JSON string from the web.
