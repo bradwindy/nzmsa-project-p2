@@ -102,7 +102,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
       <div className="caption-area card mt-4 p-4 border-light mb-5">
         <div className="row">
           <div className="col">
-            <h4 className="font-weight-bold">Search Captions:</h4>
+            <h4 className="font-weight-bold">search captions:</h4>
           </div>
           <div className="col float-right">
             <div className="form-inline float-right">
