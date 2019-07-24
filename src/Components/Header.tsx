@@ -25,7 +25,7 @@ export default class Header extends React.Component<IProps, IState> {
     return (
       <div className="header p-0 m-0 mb-3">
         <nav className="navbar navbar-light bg-light">
-          <h6 className="navbar-brand p-0 m-0">Captiv</h6>
+          <h4 className="navbar-brand p-0 m-0 font-weight-bold">Captiv</h4>
           <div className="form-inline">
             <input
               className="form-control mr-sm-2 SearchBar d-inline"

@@ -60,10 +60,13 @@ export default class CaptionArea extends React.Component<IProps, IState> {
     this.state.result.forEach((video: any) => {
       video.transcription.forEach((caption: any) => {
         toRet.push(
-          <tr onClick={() => this.handleClick(video.webUrl, caption.startTime)}>
-            <td>{caption.startTime}</td>
-            <td>{caption.phrase}</td>
-            <td>{video.videoTitle}</td>
+          <tr
+            className="p-2"
+            onClick={() => this.handleClick(video.webUrl, caption.startTime)}
+          >
+            <td className="p-2">{caption.startTime}</td>
+            <td className="p-2">{caption.phrase}</td>
+            <td className="p-2">{video.videoTitle}</td>
           </tr>,
         );
       });
@@ -125,12 +128,12 @@ export default class CaptionArea extends React.Component<IProps, IState> {
         </div>
         <br />
         <table className="table">
-          <tr>
-            <th>Time</th>
-            <th>Caption</th>
-            <th>Video</th>
+          <tr className="p-2">
+            <th className="p-2">Time</th>
+            <th className="p-2">Caption</th>
+            <th className="p-2">Video</th>
           </tr>
-          <tbody className="captionTable">{this.state.body}</tbody>
+          <tbody className="captionTable p-2">{this.state.body}</tbody>
         </table>
       </div>
     );
