@@ -1,7 +1,7 @@
-import Close from '@material-ui/icons/Close';
-import Star from '@material-ui/icons/Star';
-import StarBorder from '@material-ui/icons/StarBorder';
-import * as React from 'react';
+import Close from "@material-ui/icons/Close";
+import Star from "@material-ui/icons/Star";
+import StarBorder from "@material-ui/icons/StarBorder";
+import * as React from "react";
 
 interface IState {
   videoList: any;
@@ -16,7 +16,7 @@ export default class VideoList extends React.Component<IProps, IState> {
   public constructor(props: any) {
     super(props);
     this.state = {
-      videoList: []
+      videoList: [],
     };
     this.updateList();
   }
@@ -26,8 +26,8 @@ export default class VideoList extends React.Component<IProps, IState> {
   };
 
   public updateList = () => {
-    fetch('https://scriberapi.azurewebsites.net/api/Videos', {
-      method: 'GET'
+    fetch("https://scriberapi.azurewebsites.net/api/Videos", {
+      method: "GET",
     })
       .then((response: any) => {
         return response.json();
@@ -75,8 +75,8 @@ export default class VideoList extends React.Component<IProps, IState> {
   };
 
   public deleteVideo = (id: any) => {
-    fetch('https://scriberapi.azurewebsites.net/api/Videos/' + id, {
-      method: 'DELETE'
+    fetch("https://scriberapi.azurewebsites.net/api/Videos/" + id, {
+      method: "DELETE",
     }).then(() => {
       this.updateList();
     });
@@ -85,22 +85,22 @@ export default class VideoList extends React.Component<IProps, IState> {
   public handleLike = (video: any) => {
     const toSend = [
       {
-        from: '',
-        op: 'replace',
-        path: '/isFavourite',
-        value: !video.isFavourite
-      }
+        from: "",
+        op: "replace",
+        path: "/isFavourite",
+        value: !video.isFavourite,
+      },
     ];
     fetch(
-      'https://scriberapi.azurewebsites.net/api/Videos/update/' + video.videoId,
+      "https://scriberapi.azurewebsites.net/api/Videos/update/" + video.videoId,
       {
         body: JSON.stringify(toSend),
         headers: {
-          Accept: 'text/plain',
-          'Content-Type': 'application/json-patch+json'
+          "Accept": "text/plain",
+          "Content-Type": "application/json-patch+json",
         },
-        method: 'PATCH'
-      }
+        method: "PATCH",
+      },
     ).then(() => {
       this.updateList();
     });

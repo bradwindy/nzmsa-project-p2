@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": "tslint:recommended",
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
@@ -9,8 +9,9 @@
   },
   "rules": {
     "no-console": false,
-    "jsx-no-lambda":false,
-    "ordered-imports":false
+    "jsx-no-lambda": false,
+    "ordered-imports": false,
+    "semicolon": [true, "always", "ignore-bound-class-methods"]
   },
   "jsRules": {
     "no-console": false

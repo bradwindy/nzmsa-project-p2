@@ -16,7 +16,7 @@ export default class Header extends React.Component<IProps, IState> {
   public constructor(props: any) {
     super(props);
     this.state = {
-      input: ""
+      input: "",
     };
   }
 
@@ -52,7 +52,7 @@ export default class Header extends React.Component<IProps, IState> {
                         <AddCircle />
                       </IconButton>
                     </InputAdornment>
-                  )
+                  ),
                 }}
               />
             </div>
