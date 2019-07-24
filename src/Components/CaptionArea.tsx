@@ -61,7 +61,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
       video.transcription.forEach((caption: any) => {
         toRet.push(
           <tr
-            className="p-2"
+            className="p-2 text-white"
             onClick={() => this.handleClick(video.webUrl, caption.startTime)}
           >
             <td className="p-2">{caption.startTime}</td>
@@ -99,7 +99,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <div className="caption-area card mt-4 p-4">
+      <div className="caption-area card mt-4 p-4 border-light mb-5">
         <div className="row">
           <div className="col">
             <h4 className="font-weight-bold">Search Captions:</h4>
@@ -107,7 +107,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
           <div className="col float-right">
             <div className="form-inline float-right">
               <input
-                className="form-control mr-sm-2 SearchBar d-inline"
+                className="form-control mr-sm-2 SearchBar border-light"
                 id="Search-Bar"
                 type="search"
                 placeholder="Search"
@@ -118,7 +118,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
                 }
               />
               <button
-                className="btn btn-outline-success my-2 my-sm-0 d-inline"
+                className="btn btn-outline-success my-2 my-sm-0 btn-outline-light"
                 onClick={() => this.search()}
               >
                 Search
@@ -128,7 +128,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
         </div>
         <br />
         <table className="table">
-          <tr className="p-2">
+          <tr className="p-2 text-white">
             <th className="p-2">Time</th>
             <th className="p-2">Caption</th>
             <th className="p-2">Video</th>

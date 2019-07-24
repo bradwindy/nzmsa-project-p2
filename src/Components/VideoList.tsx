@@ -41,9 +41,17 @@ export default class VideoList extends React.Component<IProps, IState> {
                 onClick={() => this.handleLike(video)}
               >
                 {video.isFavourite === true ? (
-                  <FontAwesomeIcon icon={["fas", "heart"]} size="lg" />
+                  <FontAwesomeIcon
+                    icon={["fas", "heart"]}
+                    size="lg"
+                    style={{ color: "white" }}
+                  />
                 ) : (
-                  <FontAwesomeIcon icon={["far", "heart"]} size="lg" />
+                  <FontAwesomeIcon
+                    icon={["far", "heart"]}
+                    size="lg"
+                    style={{ color: "white" }}
+                  />
                 )}
               </td>
               <td
@@ -57,7 +65,7 @@ export default class VideoList extends React.Component<IProps, IState> {
                 />
               </td>
               <td
-                className="align-middle p-2"
+                className="align-middle p-2 text-white"
                 onClick={() => this.props.play(video.webUrl)}
               >
                 {video.videoTitle}
@@ -66,7 +74,11 @@ export default class VideoList extends React.Component<IProps, IState> {
                 className="align-middle p-3"
                 onClick={() => this.deleteVideo(video.videoId)}
               >
-                <FontAwesomeIcon icon="times" size="lg" />
+                <FontAwesomeIcon
+                  icon="times"
+                  size="lg"
+                  style={{ color: "white" }}
+                />
               </td>
             </tr>
           );
@@ -114,7 +126,7 @@ export default class VideoList extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <div className="video-list card">
+      <div className="video-list card border-light">
         <h4 className="pt-3 pl-3 pb-2 font-weight-bold">Videos</h4>
         <table className="table">{this.state.videoList}</table>
       </div>

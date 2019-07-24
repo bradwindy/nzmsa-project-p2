@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap');
+
+:root {
+  --main-bg-color: #D13C4F;
+}
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--main-bg-color);
+  color: white;
 }
 
 .header {
@@ -46,4 +53,28 @@ body {
 
 .player {
   background-color: black;
+}
+
+.navbar {
+  background-color: var(--main-bg-color);
+}
+
+.card {
+  background-color: var(--main-bg-color);
+}
+
+.form-control {
+  background-color: rgba(0, 0, 0, 0.0);
+  color: white;
+}
+
+#logotext {
+  font-family: 'DM Serif Display', serif;
+}
+
+.form-control::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1;
+  /* Firefox */
 }
