@@ -1,7 +1,5 @@
-import Close from "@material-ui/icons/Close";
-import Star from "@material-ui/icons/Star";
-import StarBorder from "@material-ui/icons/StarBorder";
 import * as React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface IState {
   videoList: any;
@@ -39,13 +37,17 @@ export default class VideoList extends React.Component<IProps, IState> {
           const row = (
             <tr>
               <td
-                className="align-middle"
+                className="align-middle pl-3 pr-2"
                 onClick={() => this.handleLike(video)}
               >
-                {video.isFavourite === true ? <Star /> : <StarBorder />}
+                {video.isFavourite === true ? (
+                  <FontAwesomeIcon icon={["fas", "heart"]} size="lg" />
+                ) : (
+                  <FontAwesomeIcon icon={["far", "heart"]} size="lg" />
+                )}
               </td>
               <td
-                className="align-middle"
+                className="align-middle p-2"
                 onClick={() => this.props.play(video.webUrl)}
               >
                 <img
@@ -55,16 +57,16 @@ export default class VideoList extends React.Component<IProps, IState> {
                 />
               </td>
               <td
-                className="align-middle"
+                className="align-middle p-2"
                 onClick={() => this.props.play(video.webUrl)}
               >
                 {video.videoTitle}
               </td>
               <td
-                className="align-middle"
+                className="align-middle p-3"
                 onClick={() => this.deleteVideo(video.videoId)}
               >
-                <Close />
+                <FontAwesomeIcon icon="times" size="lg" />
               </td>
             </tr>
           );

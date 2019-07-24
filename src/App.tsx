@@ -4,6 +4,30 @@ import CaptionArea from "./Components/CaptionArea";
 import Header from "./Components/Header";
 import VideoList from "./Components/VideoList";
 import "./App.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faHeart as fasHeart,
+  faPlus,
+  faPlusCircle,
+  faPlusSquare,
+  faStar as fasStar,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeart as farHeart,
+  faStar as farStar,
+} from "@fortawesome/free-regular-svg-icons";
+
+library.add(
+  fasStar,
+  farStar,
+  fasHeart,
+  farHeart,
+  faPlusCircle,
+  faPlus,
+  faPlusSquare,
+  faTimes,
+);
 
 interface IState {
   playingUrl: any;
