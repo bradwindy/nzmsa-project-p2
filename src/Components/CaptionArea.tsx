@@ -1,7 +1,3 @@
-import { IconButton } from "@material-ui/core";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import TextField from "@material-ui/core/TextField";
-import Search from "@material-ui/icons/Search";
 import * as React from "react";
 
 interface IState {
@@ -100,47 +96,42 @@ export default class CaptionArea extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <div className="caption-area">
-        <div className="caption-area">
-          <div className="row">
-            <div className="col-2 justify-content-center align-self-center">
-              <h1>
-                <span className="red-heading">search</span>caption
-              </h1>
-            </div>
-            <div className="col-10">
-              <TextField
+      <div className="caption-area card mt-4 p-4">
+        <div className="row">
+          <div className="col">
+            <h4 className="font-weight-bold">Search Captions:</h4>
+          </div>
+          <div className="col float-right">
+            <div className="form-inline float-right">
+              <input
+                className="form-control mr-sm-2 SearchBar d-inline"
                 id="Search-Bar"
-                className="SearchBar"
-                placeholder="Search Captions"
-                margin="normal"
-                variant="outlined"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                value={this.state.input}
                 onChange={(event: any) =>
                   this.setState({ input: event.target.value })
                 }
-                value={this.state.input}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton onClick={() => this.search()}>
-                        <Search />
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
               />
+              <button
+                className="btn btn-outline-success my-2 my-sm-0 d-inline"
+                onClick={() => this.search()}
+              >
+                Search
+              </button>
             </div>
           </div>
-          <br />
-          <table className="table">
-            <tr>
-              <th>Time</th>
-              <th>Caption</th>
-              <th>Video</th>
-            </tr>
-            <tbody className="captionTable">{this.state.body}</tbody>
-          </table>
         </div>
+        <br />
+        <table className="table">
+          <tr>
+            <th>Time</th>
+            <th>Caption</th>
+            <th>Video</th>
+          </tr>
+          <tbody className="captionTable">{this.state.body}</tbody>
+        </table>
       </div>
     );
   }

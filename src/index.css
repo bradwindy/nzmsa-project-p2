@@ -40,12 +40,6 @@ body {
   width: 60px;
 }
 
-.caption-area {
-  background-color: #F5F5F5;
-  margin-top: 20px;
-  padding: 30px;
-}
-
 .captionTable {
   cursor: pointer;
 }
