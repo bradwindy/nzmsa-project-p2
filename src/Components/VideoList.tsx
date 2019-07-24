@@ -112,10 +112,8 @@ export default class VideoList extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <div className="video-list">
-        <h1 className="play-heading">
-          <span className="red-heading">play</span>video
-        </h1>
+      <div className="video-list card">
+        <h4 className="pt-3 pl-3 pb-2 font-weight-bold">Videos</h4>
         <table className="table">{this.state.videoList}</table>
       </div>
     );
