@@ -1,7 +1,3 @@
-import { IconButton } from "@material-ui/core";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import TextField from "@material-ui/core/TextField";
-import AddCircle from "@material-ui/icons/AddCircle";
 import * as React from "react";
 
 interface IProps {
@@ -20,44 +16,35 @@ export default class Header extends React.Component<IProps, IState> {
     };
   }
 
-  public addVideo = () => {
+  public addVideo = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
     this.props.addVideo(this.state.input);
   };
 
   public render() {
     return (
-      <div className="header">
-        <div className="container">
-          <div className="row">
-            <div className="col-2 justify-content-center align-self-center">
-              <h1>
-                <span className="red-heading">Like</span>&amp;Scribr
-              </h1>
-            </div>
-            <div className="col-10">
-              <TextField
-                id="Search-Bar"
-                className="SearchBar"
-                placeholder="Add Video Url"
-                margin="normal"
-                variant="outlined"
-                onChange={(event: any) =>
-                  this.setState({ input: event.target.value })
-                }
-                value={this.state.input}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton onClick={this.addVideo}>
-                        <AddCircle />
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </div>
+      <div className="header p-0 m-0 mb-3">
+        <nav className="navbar navbar-light bg-light">
+          <h6 className="navbar-brand p-0 m-0">Captiv</h6>
+          <div className="form-inline">
+            <input
+              className="form-control mr-sm-2 SearchBar d-inline"
+              id="Search-Bar"
+              type="search"
+              placeholder="Add Video URL"
+              aria-label="Search"
+              onChange={(event: any) =>
+                this.setState({ input: event.target.value })
+              }
+            />
+            <button
+              className="btn btn-outline-success my-2 my-sm-0 d-inline"
+              onClick={this.addVideo}
+            >
+              Add
+            </button>
           </div>
-        </div>
+        </nav>
       </div>
     );
   }
