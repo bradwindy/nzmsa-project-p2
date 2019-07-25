@@ -47,7 +47,7 @@ export default class Header extends React.Component<IProps, IState> {
                 className="btn btn-outline-success my-2 my-sm-0 btn-outline-light"
                 onClick={this.addVideo}
               >
-                Add
+                + Add
               </button>
             </div>
           </nav>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface IState {
   input: string;
@@ -102,7 +103,14 @@ export default class CaptionArea extends React.Component<IProps, IState> {
       <div className="caption-area card mt-4 p-4 border-light mb-5">
         <div className="row">
           <div className="col">
-            <h4 className="font-weight-bold">search captions:</h4>
+            <h4 className="font-weight-bold">
+              <FontAwesomeIcon
+                icon={["fas", "closed-captioning"]}
+                size="sm"
+                style={{ color: "white" }}
+              />{" "}
+              search captions
+            </h4>
           </div>
           <div className="col float-right">
             <div className="form-inline float-right">
@@ -129,9 +137,9 @@ export default class CaptionArea extends React.Component<IProps, IState> {
         <br />
         <table className="table">
           <tr className="p-2 text-white">
-            <th className="p-2">Time</th>
-            <th className="p-2">Caption</th>
-            <th className="p-2">Video</th>
+            <th className="p-2 font-weight-bold">Time</th>
+            <th className="p-2 font-weight-bold">Caption</th>
+            <th className="p-2 font-weight-bold">Video</th>
           </tr>
           <tbody className="captionTable p-2">{this.state.body}</tbody>
         </table>

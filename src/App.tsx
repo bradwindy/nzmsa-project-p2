@@ -12,6 +12,9 @@ import {
   faPlusSquare,
   faStar as fasStar,
   faTimes,
+  faSearch,
+  faFilm,
+  faClosedCaptioning,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart as farHeart,
@@ -27,6 +30,9 @@ library.add(
   faPlus,
   faPlusSquare,
   faTimes,
+  faSearch,
+  faFilm,
+  faClosedCaptioning,
 );
 
 interface IState {

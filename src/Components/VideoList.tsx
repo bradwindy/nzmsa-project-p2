@@ -44,13 +44,13 @@ export default class VideoList extends React.Component<IProps, IState> {
                   <FontAwesomeIcon
                     icon={["fas", "heart"]}
                     size="lg"
-                    style={{ color: "white" }}
+                    style={{ color: "hotpink" }}
                   />
                 ) : (
                   <FontAwesomeIcon
                     icon={["far", "heart"]}
                     size="lg"
-                    style={{ color: "white" }}
+                    style={{ color: "hotpink" }}
                   />
                 )}
               </td>
@@ -127,7 +127,10 @@ export default class VideoList extends React.Component<IProps, IState> {
   public render() {
     return (
       <div className="video-list card border-light">
-        <h4 className="pt-3 pl-3 pb-2">videos</h4>
+        <h4 className="pt-3 pl-3 pb-2">
+          <FontAwesomeIcon icon="film" size="sm" style={{ color: "white" }} />{" "}
+          videos
+        </h4>
         <table className="table">{this.state.videoList}</table>
       </div>
     );
