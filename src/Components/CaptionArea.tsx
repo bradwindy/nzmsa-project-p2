@@ -112,10 +112,10 @@ export default class CaptionArea extends React.Component<IProps, IState> {
               search captions
             </h4>
           </div>
-          <div className="col float-right">
-            <div className="form-inline float-right">
+          <div className="col-6 float-right p-0">
+            <div className="form-inline float-right mr-2">
               <input
-                className="form-control mr-sm-2 SearchBar border-light"
+                className="form-control SearchBar border-light col"
                 id="Search-Bar"
                 type="search"
                 placeholder="Search"
@@ -126,7 +126,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
                 }
               />
               <button
-                className="btn btn-outline-success my-2 my-sm-0 btn-outline-light"
+                className="btn btn-outline-success my-2 my-sm-0 btn-outline-light ml-2"
                 onClick={() => this.search()}
               >
                 Search

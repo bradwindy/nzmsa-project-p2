@@ -84,7 +84,7 @@ class App extends React.Component<{}, IState> {
         <Header addVideo={this.addVideo} />
         <div className="container">
           <div className="row">
-            <div className="col-7">
+            <div className="col-lg-7 pt-3">
               {/*
               // @ts-ignore */}
               <ReactPlayer
@@ -102,7 +102,7 @@ class App extends React.Component<{}, IState> {
                 }}
               />
             </div>
-            <div className="col-5">
+            <div className="col-lg-5 pt-3">
               <VideoList play={this.updateURL} mount={this.videoList} />
             </div>
           </div>
