@@ -27,7 +27,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
       this.setState({ result: [] }, () => this.makeTableBody());
     } else {
       fetch(
-        "https://scriberapi.azurewebsites.net/api/Videos/SearchByTranscriptions/" +
+        "https://captivapi.azurewebsites.net/api/Videos/SearchByTranscriptions/" +
           this.state.input,
         {
           headers: {

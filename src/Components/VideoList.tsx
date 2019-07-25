@@ -24,7 +24,7 @@ export default class VideoList extends React.Component<IProps, IState> {
   };
 
   public updateList = () => {
-    fetch("https://scriberapi.azurewebsites.net/api/Videos", {
+    fetch("https://captivapi.azurewebsites.net/api/Videos", {
       method: "GET",
     })
       .then((response: any) => {
@@ -93,7 +93,7 @@ export default class VideoList extends React.Component<IProps, IState> {
   };
 
   public deleteVideo = (id: any) => {
-    fetch("https://scriberapi.azurewebsites.net/api/Videos/" + id, {
+    fetch("https://captivapi.azurewebsites.net/api/Videos/" + id, {
       method: "DELETE",
     }).then(() => {
       this.updateList();
@@ -110,7 +110,7 @@ export default class VideoList extends React.Component<IProps, IState> {
       },
     ];
     fetch(
-      "https://scriberapi.azurewebsites.net/api/Videos/update/" + video.videoId,
+      "https://captivapi.azurewebsites.net/api/Videos/update/" + video.videoId,
       {
         body: JSON.stringify(toSend),
         headers: {
