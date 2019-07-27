@@ -28,7 +28,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
     } else {
       fetch(
         "https://captivapi.azurewebsites.net/api/Videos/SearchByTranscriptions/" +
-          this.state.input,
+        this.state.input,
         {
           headers: {
             Accept: "text/plain",
@@ -136,11 +136,13 @@ export default class CaptionArea extends React.Component<IProps, IState> {
         </div>
         <br />
         <table className="table">
-          <tr className="p-2 text-white">
-            <th className="p-2 font-weight-bold">Time</th>
-            <th className="p-2 font-weight-bold">Caption</th>
-            <th className="p-2 font-weight-bold">Video</th>
-          </tr>
+          <tbody>
+            <tr className="p-2 text-white">
+              <th className="p-2 font-weight-bold">Time</th>
+              <th className="p-2 font-weight-bold">Caption</th>
+              <th className="p-2 font-weight-bold">Video</th>
+            </tr>
+          </tbody>
           <tbody className="captionTable p-2">{this.state.body}</tbody>
         </table>
       </div>

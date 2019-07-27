@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Button Match Testing app button 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <div
+      className="col"
+    />
+    <div
+      className="header p-0 m-0 mb-3 col-12"
+    >
+      <nav
+        className="navbar navbar-light pt-4 pb-0 pl-0 pr-0"
+      >
+        <h2
+          className="float-left p-0 m-0"
+          id="logotext"
+        >
+          <img
+            alt=""
+            height="30"
+            src="logo.svg"
+            width="30"
+          />
+          captiv
+        </h2>
+        <div
+          className="col-6 float-right p-0"
+        >
+          <div
+            className="form-inline float-right"
+          >
+            <input
+              aria-label="Search"
+              className="form-control SearchBar border-light col float-right"
+              id="Search-Bar"
+              onChange={[Function]}
+              placeholder="Add Video URL"
+              type="search"
+            />
+            <button
+              className="btn btn-outline-success btn-outline-light float-right ml-2"
+              onClick={[Function]}
+            >
+              + Add
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      className="col"
+    />
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-7 pt-3"
+      >
+        <div
+          className="player"
+          style={
+            Object {
+              "height": "400px",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          >
+            <div />
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-5 pt-3"
+      >
+        <div
+          className="video-list card border-light"
+        >
+          <h4
+            className="pt-3 pl-3 pb-2"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-film fa-w-16 fa-sm "
+              data-icon="film"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={
+                Object {
+                  "color": "white",
+                }
+              }
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M488 64h-8v20c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12V64H96v20c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12V64h-8C10.7 64 0 74.7 0 88v336c0 13.3 10.7 24 24 24h8v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h320v-20c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v20h8c13.3 0 24-10.7 24-24V88c0-13.3-10.7-24-24-24zM96 372c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12H44c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm272 208c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm0-168c0 6.6-5.4 12-12 12H156c-6.6 0-12-5.4-12-12v-96c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v96zm112 152c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40zm0-96c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+             
+            videos
+          </h4>
+          <table
+            className="table"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="caption-area card mt-4 p-4 border-light mb-5"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col"
+        >
+          <h4
+            className="font-weight-bold"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-closed-captioning fa-w-16 fa-sm "
+              data-icon="closed-captioning"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={
+                Object {
+                  "color": "white",
+                }
+              }
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M464 64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM218.1 287.7c2.8-2.5 7.1-2.1 9.2.9l19.5 27.7c1.7 2.4 1.5 5.6-.5 7.7-53.6 56.8-172.8 32.1-172.8-67.9 0-97.3 121.7-119.5 172.5-70.1 2.1 2 2.5 3.2 1 5.7l-17.5 30.5c-1.9 3.1-6.2 4-9.1 1.7-40.8-32-94.6-14.9-94.6 31.2.1 48 51.1 70.5 92.3 32.6zm190.4 0c2.8-2.5 7.1-2.1 9.2.9l19.5 27.7c1.7 2.4 1.5 5.6-.5 7.7-53.5 56.9-172.7 32.1-172.7-67.9 0-97.3 121.7-119.5 172.5-70.1 2.1 2 2.5 3.2 1 5.7L420 222.2c-1.9 3.1-6.2 4-9.1 1.7-40.8-32-94.6-14.9-94.6 31.2 0 48 51 70.5 92.2 32.6z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+             
+            search captions
+          </h4>
+        </div>
+        <div
+          className="col-6 float-right p-0"
+        >
+          <div
+            className="form-inline float-right mr-2"
+          >
+            <input
+              aria-label="Search"
+              className="form-control SearchBar border-light col"
+              id="Search-Bar"
+              onChange={[Function]}
+              placeholder="Search"
+              type="search"
+              value=""
+            />
+            <button
+              className="btn btn-outline-success my-2 my-sm-0 btn-outline-light ml-2"
+              onClick={[Function]}
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <table
+        className="table"
+      >
+        <tbody>
+          <tr
+            className="p-2 text-white"
+          >
+            <th
+              className="p-2 font-weight-bold"
+            >
+              Time
+            </th>
+            <th
+              className="p-2 font-weight-bold"
+            >
+              Caption
+            </th>
+            <th
+              className="p-2 font-weight-bold"
+            >
+              Video
+            </th>
+          </tr>
+        </tbody>
+        <tbody
+          className="captionTable p-2"
+        />
+      </table>
+    </div>
+  </div>
+</div>
+`;
