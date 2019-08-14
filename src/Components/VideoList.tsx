@@ -59,7 +59,7 @@ export default class VideoList extends React.Component<IProps, IState> {
               </td>
               <td
                 className="align-middle p-2"
-                onClick={() => this.props.play(video.webUrl)}
+                onClick={() => this.props.play(video.webUrl, video.channelID)}
                 aria-label={"Video thumbnail for " + video.videoTitle}
               >
                 <img
@@ -70,7 +70,7 @@ export default class VideoList extends React.Component<IProps, IState> {
               </td>
               <td
                 className="align-middle p-2 text-white"
-                onClick={() => this.props.play(video.webUrl)}
+                onClick={() => this.props.play(video.webUrl, video.channelID)}
               >
                 {video.videoTitle}
               </td>

@@ -5,6 +5,8 @@ import Header from "./Components/Header";
 import VideoList from "./Components/VideoList";
 import "./App.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart as fasHeart,
   faPlus,
@@ -23,6 +25,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 library.add(
+  fab,
   fasStar,
   farStar,
   fasHeart,
@@ -38,6 +41,7 @@ library.add(
 );
 
 interface IState {
+  channelID: any;
   playingUrl: any;
   updateVideoList: any;
 }
@@ -46,7 +50,8 @@ class App extends React.Component<{}, IState> {
   public constructor(props: any) {
     super(props);
     this.state = {
-      playingUrl: "",
+      channelID: "UC1LTUN0_l5s4MvjSkRhABJA",
+      playingUrl: "https://www.youtube.com/watch?v=GlCmAC4MHek",
       updateVideoList: null,
     };
   }
@@ -65,7 +70,7 @@ class App extends React.Component<{}, IState> {
     });
   };
 
-  public updateURL = (url: string) => {
+  public updateURL = (url: string, channelID: string) => {
     if (this.state.playingUrl === url) {
       this.setState({ playingUrl: "" }, () =>
         this.setState({ playingUrl: url }),
@@ -73,6 +78,8 @@ class App extends React.Component<{}, IState> {
     } else {
       this.setState({ playingUrl: url });
     }
+
+    this.setState({ channelID });
   };
 
   public videoList = (callback: any) => {
@@ -94,7 +101,7 @@ class App extends React.Component<{}, IState> {
                 controls={true}
                 url={this.state.playingUrl}
                 width="100%"
-                height="400px"
+                height="350px"
                 aria-label="Video Player Window"
                 playing={true}
                 config={{
@@ -104,6 +111,40 @@ class App extends React.Component<{}, IState> {
                   },
                 }}
               />
+
+              <a
+                href={
+                  "http://www.youtube.com/channel/" +
+                  this.state.channelID +
+                  "?sub_confirmation=1"
+                }
+                className="btn btn-danger mt-3"
+              >
+                <FontAwesomeIcon icon={["fab", "youtube"]} />
+                &nbsp;Subscribe
+              </a>
+
+              <a
+                className="btn btn-primary mt-3 ml-2"
+                href={
+                  "https://www.facebook.com/sharer/sharer.php?u=" +
+                  this.state.playingUrl
+                }
+              >
+                <FontAwesomeIcon icon={["fab", "facebook"]} />
+                &nbsp;Share
+              </a>
+
+              <a
+                className="btn btn-info mt-3 ml-2"
+                href={
+                  "https://twitter.com/intent/tweet?text=" +
+                  this.state.playingUrl
+                }
+              >
+                <FontAwesomeIcon icon={["fab", "twitter"]} />
+                &nbsp;Tweet
+              </a>
             </div>
             <div className="col-lg-5 pt-3">
               <VideoList play={this.updateURL} mount={this.videoList} />
