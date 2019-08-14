@@ -15,6 +15,7 @@ import {
   faSearch,
   faFilm,
   faClosedCaptioning,
+  faMicrophone,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart as farHeart,
@@ -33,6 +34,7 @@ library.add(
   faSearch,
   faFilm,
   faClosedCaptioning,
+  faMicrophone,
 );
 
 interface IState {
@@ -93,6 +95,7 @@ class App extends React.Component<{}, IState> {
                 url={this.state.playingUrl}
                 width="100%"
                 height="400px"
+                aria-label="Video Player Window"
                 playing={true}
                 config={{
                   youtube: {

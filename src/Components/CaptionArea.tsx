@@ -1,10 +1,16 @@
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+export interface IWindow extends Window {
+  webkitSpeechRecognition: any;
+  SpeechRecognition: any;
+}
+
 interface IState {
   input: string;
   result: any;
   body: any;
+  listening: boolean;
 }
 
 interface IProps {
@@ -12,13 +18,59 @@ interface IProps {
   play: any;
 }
 
+const { webkitSpeechRecognition } = window as any;
+const { SpeechRecognition } = window as any;
+const speechRecognition = SpeechRecognition || webkitSpeechRecognition;
+const recognition = new speechRecognition();
+
+recognition.continous = true;
+recognition.interimResults = true;
+recognition.lang = "en-US";
+
 export default class CaptionArea extends React.Component<IProps, IState> {
   public constructor(props: any) {
     super(props);
     this.state = {
       body: [],
       input: "",
+      listening: false,
       result: [],
+    };
+    this.toggleListen = this.toggleListen.bind(this);
+    this.handleListen = this.handleListen.bind(this);
+  }
+
+  public toggleListen() {
+    this.setState(
+      {
+        listening: !this.state.listening,
+      },
+      this.handleListen,
+    );
+  }
+
+  public handleListen() {
+    if (this.state.listening) {
+      recognition.start();
+    }
+
+    let finalTranscript = "";
+
+    // prettier-ignore
+    recognition.onresult = (event) => {
+      let interimTranscript = "";
+
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) {
+          finalTranscript += transcript + " ";
+        } else {
+          interimTranscript += transcript;
+        }
+      }
+      (document.getElementById("SearchCaption-Bar") as HTMLInputElement)!.value = interimTranscript;
+      (document.getElementById("SearchCaption-Bar") as HTMLInputElement)!.value = finalTranscript;
+      this.setState({ input: finalTranscript });
     };
   }
 
@@ -28,7 +80,7 @@ export default class CaptionArea extends React.Component<IProps, IState> {
     } else {
       fetch(
         "https://captivapi.azurewebsites.net/api/Videos/SearchByTranscriptions/" +
-        this.state.input,
+          this.state.input,
         {
           headers: {
             Accept: "text/plain",
@@ -76,15 +128,19 @@ export default class CaptionArea extends React.Component<IProps, IState> {
       if (this.state.input.trim() === "") {
         const error = (
           <div>
-            <p>Sorry you need to search</p>
+            <p>Empty Search</p>
           </div>
         );
         this.setState({ body: error });
       } else {
         const error = (
-          <div>
-            <p>Sorry no results returned</p>
-          </div>
+          <tr>
+            <td>
+              <p color="white" className="p-2">
+                Sorry, no results returned.
+              </p>
+            </td>
+          </tr>
         );
         this.setState({ body: error });
       }
@@ -109,27 +165,41 @@ export default class CaptionArea extends React.Component<IProps, IState> {
                 size="sm"
                 style={{ color: "white" }}
               />{" "}
-              search captions
+              captions
             </h4>
           </div>
           <div className="col-6 float-right p-0">
             <div className="form-inline float-right mr-2">
               <input
                 className="form-control SearchBar border-light col"
-                id="Search-Bar"
+                id="SearchCaption-Bar"
                 type="search"
-                placeholder="Search"
-                aria-label="Search"
+                placeholder="Enter Text"
+                aria-label="Enter Text"
                 value={this.state.input}
                 onChange={(event: any) =>
                   this.setState({ input: event.target.value })
                 }
               />
               <button
-                className="btn btn-outline-success my-2 my-sm-0 btn-outline-light ml-2"
+                className="btn my-2 my-sm-0 btn-outline-light ml-2"
                 onClick={() => this.search()}
+                aria-label="Search Captions"
               >
                 Search
+              </button>
+              <button
+                id="microphone-btn"
+                className="btn btn-outline-light float-right ml-2"
+                onClick={this.toggleListen}
+                aria-label="Voice search"
+              >
+                <FontAwesomeIcon
+                  icon="microphone"
+                  size="sm"
+                  style={{ color: "mediumturquoise" }}
+                />{" "}
+                Voice
               </button>
             </div>
           </div>

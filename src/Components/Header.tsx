@@ -39,14 +39,15 @@ export default class Header extends React.Component<IProps, IState> {
                   id="Search-Bar"
                   type="search"
                   placeholder="Add Video URL"
-                  aria-label="Search"
+                  aria-label="Input Box for Video URL"
                   onChange={(event: any) =>
                     this.setState({ input: event.target.value })
                   }
                 />
                 <button
-                  className="btn btn-outline-success btn-outline-light float-right ml-2"
+                  className="btn btn-outline-light float-right ml-2"
                   onClick={this.addVideo}
+                  aria-label="Add video URL button"
                 >
                   + Add
                 </button>
