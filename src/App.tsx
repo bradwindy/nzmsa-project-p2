@@ -119,6 +119,7 @@ class App extends React.Component<{}, IState> {
                   "?sub_confirmation=1"
                 }
                 className="btn btn-danger mt-3"
+                aria-label="Subscribe to channel on youtube"
               >
                 <FontAwesomeIcon icon={["fab", "youtube"]} />
                 &nbsp;Subscribe
@@ -130,6 +131,7 @@ class App extends React.Component<{}, IState> {
                   "https://www.facebook.com/sharer/sharer.php?u=" +
                   this.state.playingUrl
                 }
+                aria-label="Share on facebook"
               >
                 <FontAwesomeIcon icon={["fab", "facebook"]} />
                 &nbsp;Share
@@ -141,6 +143,7 @@ class App extends React.Component<{}, IState> {
                   "https://twitter.com/intent/tweet?text=" +
                   this.state.playingUrl
                 }
+                aria-label="Tweet on twitter"
               >
                 <FontAwesomeIcon icon={["fab", "twitter"]} />
                 &nbsp;Tweet
